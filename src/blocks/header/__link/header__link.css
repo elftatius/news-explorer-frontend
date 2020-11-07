@@ -1,0 +1,11 @@
+@import url(./_active/header__link_active.css);
+
+.header__link {
+  text-decoration: none;
+  margin-right: 32px;
+  display: inline-block;
+  height: 80px;
+  line-height: 80px;
+  box-sizing: border-box;
+  color: #E5E5E5;
+}
