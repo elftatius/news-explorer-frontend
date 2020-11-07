@@ -1,0 +1,20 @@
+{
+  "name": "news-explorer-frontend",
+  "version": "1.0.0",
+  "description": "frontend for the thesis in Yandex.Praktikum",
+  "main": "index.js",
+  "scripts": {
+    "start": "rimraf dist && cross-env NODE_ENV=production webpack --mode production",
+    "dev": "NODE_ENV=development webpack-dev-server --mode development --open 'Google Chrome' --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elftatius/news-explorer-frontend.git"
+  },
+  "author": "Tkachenko Tatyana",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elftatius/news-explorer-frontend/issues"
+  },
+  "homepage": "https://github.com/elftatius/news-explorer-frontend#readme"
+}
