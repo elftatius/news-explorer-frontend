@@ -1,0 +1,16 @@
+.hero__input {
+  border: none;
+  height: 90%;
+  width: 100%;
+  outline: none;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.hero__input::placeholder {
+  color: #B6BCBF;
+  opacity: 1;
+}

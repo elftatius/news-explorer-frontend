@@ -1,0 +1,9 @@
+.author__image {
+  height: 464px;
+  width: 464px;
+  border-radius: 1000px;
+  background-image: url('../../../images/author.jpeg');
+  background-size: cover;
+  background-position: center;
+  margin-right: 56px;
+}

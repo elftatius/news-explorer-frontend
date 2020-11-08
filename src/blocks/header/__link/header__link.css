@@ -9,3 +9,7 @@
   box-sizing: border-box;
   color: #E5E5E5;
 }
+
+.header__link:hover {
+  color: white;
+}

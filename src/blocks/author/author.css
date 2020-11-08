@@ -1,0 +1,10 @@
+@import url(./__container/author__container.css);
+@import url(./__image/author__image.css);
+@import url(./__info/author__info.css);
+@import url(./__title/author__title.css);
+@import url(./__description/author__description.css);
+
+.author {
+  height: 624px;
+  margin-top: 80px;
+}

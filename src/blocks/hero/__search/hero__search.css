@@ -1,0 +1,11 @@
+.hero__search {
+  width: 608px;
+  height: 64px;
+  display: flex;
+  border-radius: 100px;
+  background-color: white;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 24px;
+  box-sizing: border-box;
+}
