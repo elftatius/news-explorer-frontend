@@ -1,0 +1,6 @@
+.card__image {
+  background-image: url('../../../images/card-1.png');
+  height: 272px;
+  border-radius: 16px 16px 0 0;
+  margin-bottom: 20px;
+}

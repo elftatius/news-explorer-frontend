@@ -1,0 +1,19 @@
+.button {
+  background: #FFFFFF;
+  border-radius: 80px;
+  height: 64px;
+  text-decoration: none;
+  color: #1A1B22;
+  display: inline-block;
+  line-height: 64px;
+  padding-left: 84px;
+  padding-right: 84px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.button:hover {
+  opacity: 0.9;
+}

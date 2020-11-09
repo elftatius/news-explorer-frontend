@@ -5,6 +5,6 @@
 @import url(./__description/author__description.css);
 
 .author {
-  height: 624px;
-  margin-top: 80px;
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
