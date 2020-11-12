@@ -1,7 +1,10 @@
+@import url(./_dark/header__logo_dark.css);
+
 .header__logo {
   font-family: Roboto Slab;
   font-style: normal;
   font-weight: bold;
   font-size: 20px;
   line-height: 24px;
+  color: white;
 }

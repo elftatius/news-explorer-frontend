@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>News exprorer</title>
+  <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.css %>">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <div class="root">
+    <header class="header header_dark">
+      <div class="header__container">
+        <div class="header__logo header__logo_dark">NewsExplorer</div>
+        <ul class="header__nav">
+          <li>
+            <a class="header__link header__link_dark header__link_active" href="#">Главная</a>
+          </li>
+          <li>
+            <a class="header__link header__link_dark" href="#">Сохраненные статьи</a>
+          </li>
+          <li>
+            <a class="header__button header__button_dark" href="#">
+              Грета
+              <img src="<%=require('./images/logout-icon.svg').default%>" alt="logout-icon" class="header__button-icon">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+  </div>
+  <script src="<%= htmlWebpackPlugin.files.js %>"></script>
+</body>
+</html>

@@ -10,7 +10,3 @@
 @import url(../blocks/utils/text-center/text-center.css);
 @import url(../blocks/footer/footer.css);
 
-body {
-  background-color: white;
-  color: aliceblue;
-}
