@@ -127,6 +127,28 @@
         </div>
       </div>
     </section>
+    <div class="popup popup_is-opened" id="login-popup">
+      <div class="popup__content">
+        <img src="<%=require('./images/close.svg').default%>" alt="" class="popup__close" id="login-popup-close">
+        <h3 class="popup__title">Вход</h3>
+        <form class="popup__form" novalidate name="login">
+          <div class="input-container">
+            <label for="login-email" class="popup__label">Email</label>
+            <input type="email" name="login-email" class="popup__input" placeholder="Введите почту" required>
+            <span class="error-message" id="login-error-email">Неправильный формат email</span>
+          </div>
+          <div class="input-container">
+            <label for="login-password" class="popup__label">Пароль</label>
+            <input type="password" name="login-password" class="popup__input" placeholder="Введите пароль" required minlength="8">
+            <span class="error-message" id="login-error-password"></span>
+          </div>
+          <div class="text-center">
+            <button disabled type class="button button_is-fullwidth">Войти</button>
+            <p class="popup__description">или <a class="link" href="#">Зарегистрироваться</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
     <footer class="footer">
       <div class="footer__container">
         <div class="footer__site-info">© 2020 Supersite, Powered by News API</div>
