@@ -1,4 +1,5 @@
 @import url(./_is-fullwidth/button_is-fullwidth.css);
+@import url(./_brand/button_brand.css);
 
 .button {
   background: #FFFFFF;
@@ -14,6 +15,7 @@
   font-weight: 500;
   font-size: 18px;
   border: 1px solid #1A1B22;
+  cursor: pointer;
 }
 
 a.button {
