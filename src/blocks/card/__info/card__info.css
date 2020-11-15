@@ -7,3 +7,9 @@
   justify-content: space-between;
 
 }
+
+@media(max-width: 1100px) {
+  .card__info {
+    padding: 8px;
+  }
+}

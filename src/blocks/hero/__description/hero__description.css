@@ -6,6 +6,13 @@
   line-height: 24px;
   letter-spacing: 0px;
   text-align: left;
-  width: 545px;
+  max-width: 545px;
   margin-bottom: 64px;
+}
+
+@media(max-width: 768px) {
+  .hero__description {
+    max-width: 448px;
+    margin-bottom: 48px;
+  }
 }

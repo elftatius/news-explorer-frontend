@@ -1,0 +1,13 @@
+@import url(./__title/notification__title.css);
+@import url(./__title/notification__description.css);
+
+
+.notification {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background: #F5F6F7;
+}

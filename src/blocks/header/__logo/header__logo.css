@@ -7,4 +7,11 @@
   font-size: 20px;
   line-height: 24px;
   color: white;
+  z-index: 99;
+}
+
+@media(max-width: 400px) {
+  .header__logo {
+    font-size: 16px;
+  }
 }

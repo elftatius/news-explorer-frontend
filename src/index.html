@@ -13,6 +13,7 @@
     <header class="header">
       <div class="header__container">
         <div class="header__logo">NewsExplorer</div>
+        <img class="header__burger" src="<%=require('./images/menu-icon-white.svg').default%>" alt="menu icon">
         <ul class="header__nav">
           <li>
             <a class="header__link header__link_active" href="#">Главная</a>
@@ -36,6 +37,15 @@
         </form>
       </div>
     </section>
+    <!-- <section class="notification">
+      <img class="preloader" src="<%=require('./images/preloader.png').default%>" alt="preloader">
+      <p class="notification__description">Идет поиск новостей...</p>
+    </section> -->
+    <!-- <section class="notification">
+      <img class="notification__icon" src="<%=require('./images/not-found-icon.svg').default%>" alt="not-found-icon">
+      <p class="notification__title">Ничего не найдено</p>
+      <p class="notification__description">К сожалению по вашему запросу ничего не найдено.</p>
+    </section> -->
     <section class="section">
       <div class="section__container">
         <h2 class="section__title">Результаты поиска</h2>
@@ -93,36 +103,18 @@
                 <p class="card__source">Риа</p>
               </div>
             </a>
-            <!-- <a class="card" href="#">
-              <div class="card__info">
-                <div class="card__tag">Природа</div>
-                <div class="card__action">
-                  <div class="card__action-tooltip">Войдите, чтобы сохранять статьи</div>
-                  <div class="card__icon">
-                    <img src="<%=require('./images/bookmark-icon.svg').default%>" alt="bookmark card">
-                  </div>
-                </div>
-              </div>
-              <div class="card__image"></div>
-              <div class="card__container">
-                <p class="card__date">2 августа, 2019</p>
-                <p class="card__title">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</p>
-                <p class="card__description">Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о необходимости их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где...</p>
-                <p class="card__source">Риа</p>
-              </div>
-            </a> -->
           </div>
           <div class="text-center padding-bottom-80">
             <a class="button" href="#">Показать еще</a>
           </div>
       </div>
     </section>
-    <section class="author">
+     <section class="author">
       <div class="author__container">
         <div class="author__image"></div>
         <div class="author__info">
           <h2 class="author__title"> Об авторе</h2>
-          <p class="author__description">Меня зовут Татьяна Ткаченко. </p>
+          <p class="author__description">Меня зовут Татьяна Ткаченко. По основному образованию я психолог. Версткой я заинтересовалась сама и начала самостоятельное обучение. Но мне не хватало систeмного подхода, что и обеспечил мне Яндекс.Практикум. И вот я тут пыхтя, скребя, грызя гранит науки осваиваю азы программирования. Что из этого выйдет? Узнаем дальше. Ну а пока, вот мой дипломный проект.</p>
           <p class="author__description"></p>
         </div>
       </div>

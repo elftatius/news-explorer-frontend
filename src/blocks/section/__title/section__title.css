@@ -10,3 +10,17 @@
   margin-bottom: 30px;
   max-width: 513px;
 }
+
+@media(max-width: 1100px) {
+  .section__title {
+    padding-top: 40px;
+    margin-bottom: 0;
+  }
+}
+
+@media(max-width: 500px) {
+  .section__title {
+    font-size: 30px;
+    line-height: 34px;
+  }
+}

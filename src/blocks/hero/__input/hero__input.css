@@ -14,3 +14,12 @@
   color: #B6BCBF;
   opacity: 1;
 }
+
+@media(max-width: 360px) {
+  .hero__input {
+    height: 56px;
+    border-radius: 100px;
+    padding-inline-start: 16px;
+    width: calc(100% - 16px);
+  }
+}

@@ -6,3 +6,15 @@
   line-height: 22px;
   color: #1A1B22;
 }
+
+@media(max-width: 1312px) {
+  .card__description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    height: 88px;
+    margin-top: 0;
+  }
+}

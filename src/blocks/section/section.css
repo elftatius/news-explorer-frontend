@@ -3,6 +3,7 @@
 @import url(./__aside/section__aside.css);
 @import url(./__paragraph/section__paragraph.css);
 @import url(./_white/section_white.css);
+@import url(./_top/section_top.css);
 
 .section {
   background: #F5F6F7;

@@ -16,3 +16,24 @@
   background-position: center;
   color: white;
 }
+
+@media(max-width: 768px) {
+  .hero {
+    height: 400px;
+    padding-top: 104px;
+  }
+}
+
+@media(max-width: 480px) {
+  .hero {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media(max-width: 360px) {
+  .hero {
+    height: 80vh;
+    position: relative;
+  }
+}

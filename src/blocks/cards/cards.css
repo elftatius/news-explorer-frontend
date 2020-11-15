@@ -5,3 +5,16 @@
   padding-bottom: 64px;
   padding-top: 64px;
 }
+
+@media(max-width: 1100px) {
+  .cards {
+    padding-bottom: 32px;
+    padding-top: 32px;
+  }
+}
+
+@media(max-width: 500px) {
+  .cards {
+    padding-bottom: 0;
+  }
+}

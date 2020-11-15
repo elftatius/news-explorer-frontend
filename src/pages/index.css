@@ -14,3 +14,5 @@
 @import url(../blocks/error-message/error-message.css);
 @import url(../blocks/link/link.css);
 @import url(../blocks/footer/footer.css);
+@import url(../blocks/preloader/preloader.css);
+@import url(../blocks/notification/notification.css);

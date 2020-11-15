@@ -20,6 +20,7 @@
 
 a.button {
   line-height: 64px;
+  border: none;
 }
 
 .button:hover {

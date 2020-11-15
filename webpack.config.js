@@ -1,9 +1,10 @@
 const path = require('path');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash'); // добавили плагин
 const webpack = require('webpack');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const cssnano = require('cssnano');
 
 const isDev = process.env.NODE_ENV === 'development';
 
@@ -11,17 +12,16 @@ module.exports = {
   entry: { main: './src/script/index.js', myProfile: './src/script/my-profile.js' },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[chunkhash].js'
+    filename: '[name].[chunkhash].js',
   },
-// указали путь к файлу, в квадратных скобках куда вставлять сгенерированный хеш
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader"
-        }
+          loader: 'babel-loader',
+        },
       },
       {
         test: /\.(eot|ttf|woff|woff2)$/,
@@ -29,7 +29,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use:  [(isDev ? 'style-loader' : MiniCssExtractPlugin.loader), {
+        use: [(isDev ? 'style-loader' : MiniCssExtractPlugin.loader), {
           loader: 'css-loader',
           options: {
             importLoaders: 2,
@@ -50,35 +50,35 @@ module.exports = {
           },
         ],
       },
-    ]
+    ],
   },
   plugins: [
     new webpack.DefinePlugin({
-      'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+      NODE_ENV: JSON.stringify(process.env.NODE_ENV),
     }),
     new MiniCssExtractPlugin({
-        filename: 'style.[contenthash].css'
+      filename: 'style.[contenthash].css',
     }),
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/g,
-      cssProcessor: require('cssnano'),
+      cssProcessor: cssnano,
       cssProcessorPluginOptions: {
-              preset: ['default'],
+        preset: ['default'],
       },
-      canPrint: true
+      canPrint: true,
     }),
     new HtmlWebpackPlugin({
       inject: false,
       template: './src/index.html',
       chunks: ['main'],
-      filename: 'index.html'
+      filename: 'index.html',
     }),
     new HtmlWebpackPlugin({
       inject: false,
       template: './src/my-profile.html',
       chunks: ['myProfile'],
-      filename: 'my-profile.html'
+      filename: 'my-profile.html',
     }),
-    new WebpackMd5Hash()
-  ]
+    new WebpackMd5Hash(),
+  ],
 };

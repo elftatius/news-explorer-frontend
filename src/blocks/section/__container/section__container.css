@@ -1,4 +1,18 @@
 .section__container {
   margin: 0 auto;
-  width: 1232px;
+  max-width: 1232px;
+}
+
+@media(max-width: 1312px) {
+  .section__container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media(max-width: 430px) {
+  .section__container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 }
