@@ -1,3 +1,7 @@
 .footer__social {
   margin-left: 28px;
 }
+
+.footer__social img {
+  width: 22px;
+}
