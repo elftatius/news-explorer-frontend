@@ -22,7 +22,7 @@
             <a class="header__link" href="#">Сохраненные статьи</a>
           </li>
           <li>
-            <a class="header__button" href="#">Авторизоваться</a>
+            <a class="header__button" href="#" data-open-popup="#login-popup">Авторизоваться</a>
           </li>
         </ul>
       </div>
@@ -121,7 +121,7 @@
     </section>
     <div class="popup" id="login-popup">
       <div class="popup__content">
-        <img src="<%=require('./images/close.svg').default%>" alt="" class="popup__close" id="login-popup-close">
+        <img src="<%=require('./images/close.svg').default%>" alt="" class="popup__close" data-close-popup="#login-popup">
         <h3 class="popup__title">Вход</h3>
         <form class="popup__form" novalidate name="login">
           <div class="input-container">
@@ -136,14 +136,14 @@
           </div>
           <div class="text-center">
             <button disabled type class="button button_is-fullwidth">Войти</button>
-            <p class="popup__description">или <a class="link" id="signup-link" href="#">Зарегистрироваться</a></p>
+            <p class="popup__description">или <a class="link" data-close-popup="#login-popup" data-open-popup="#signup-popup" href="#">Зарегистрироваться</a></p>
           </div>
         </form>
       </div>
     </div>
     <div class="popup" id="signup-popup">
       <div class="popup__content">
-        <img src="<%=require('./images/close.svg').default%>" alt="" class="popup__close" id="signup-popup-close">
+        <img src="<%=require('./images/close.svg').default%>" alt="" class="popup__close" data-close-popup="#signup-popup">
         <h3 class="popup__title">Регистрация</h3>
         <form class="popup__form" novalidate name="signup">
           <div class="input-container">
@@ -166,7 +166,7 @@
           </div>
           <div class="text-center">
             <button type class="button button_brand button_is-fullwidth">Зарегистрироваться</button>
-            <p class="popup__description">или <a class="link" id="login-link" href="#">Войти</a></p>
+            <p class="popup__description">или <a class="link" data-close-popup="#signup-popup" data-open-popup="#login-popup" href="#">Войти</a></p>
           </div>
         </form>
       </div>

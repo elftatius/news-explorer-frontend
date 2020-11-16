@@ -1,36 +1,20 @@
 import '../pages/index.css';
 
-const authBtn = document.querySelector('.header__button');
-const closeBtn = document.querySelector('#login-popup-close');
-const loginPopup = document.querySelector('#login-popup');
-const signUpBtn = document.querySelector('#signup-link');
-const signUpPopup = document.querySelector('#signup-popup');
-const closeSignupBtn = document.querySelector('#signup-popup-close');
-const loginBtn = document.querySelector('#login-link');
+const popupOpenLinks = document.querySelectorAll('[data-open-popup]');
+const popupCloseLinks = document.querySelectorAll('[data-close-popup]');
 
-authBtn.addEventListener('click', (e) => {
-  e.preventDefault();
-  loginPopup.classList.add('popup_is-opened');
+Array.from(popupOpenLinks).forEach((popupOpenLink) => {
+  popupOpenLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    const popup = document.querySelector(popupOpenLink.dataset.openPopup);
+    popup.classList.add('popup_is-opened');
+  });
 });
 
-closeBtn.addEventListener('click', (e) => {
-  e.preventDefault();
-  loginPopup.classList.remove('popup_is-opened');
-});
-
-signUpBtn.addEventListener('click', (e) => {
-  e.preventDefault();
-  loginPopup.classList.remove('popup_is-opened');
-  signUpPopup.classList.add('popup_is-opened');
-});
-
-closeSignupBtn.addEventListener('click', (e) => {
-  e.preventDefault();
-  signUpPopup.classList.remove('popup_is-opened');
-});
-
-loginBtn.addEventListener('click', (e) => {
-  e.preventDefault();
-  signUpPopup.classList.remove('popup_is-opened');
-  loginPopup.classList.add('popup_is-opened');
+Array.from(popupCloseLinks).forEach((popupCloseLink) => {
+  popupCloseLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    const popup = document.querySelector(popupCloseLink.dataset.closePopup);
+    popup.classList.remove('popup_is-opened');
+  });
 });
