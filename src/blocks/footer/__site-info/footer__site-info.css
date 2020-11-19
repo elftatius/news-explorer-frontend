@@ -1,0 +1,14 @@
+.footer__site-info {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  color: #B6BCBF;
+}
+
+@media(max-width: 460px) {
+  .footer__site-info {
+    padding-top: 12px;
+  }
+}

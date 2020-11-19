@@ -1,0 +1,67 @@
+@import url(./__info/card__info.css);
+@import url(./__tag/card__tag.css);
+@import url(./__action/card__action.css);
+@import url(./__action-tooltip/card__action-tooltip.css);
+@import url(./__icon/card__icon.css);
+@import url(./__image/card__image.css);
+@import url(./__container/card__container.css);
+@import url(./__date/card__date.css);
+@import url(./__title/card__title.css);
+@import url(./__description/card__description.css);
+@import url(./__source/card__source.css);
+
+.card {
+  max-width: 400px;
+  background: #FFFFFF;
+  border-radius: 16px;
+  position: relative;
+  box-sizing: border-box;
+  height: 576px;
+  text-decoration: none;
+  margin-bottom: 16px;
+}
+
+.card:hover {
+  box-shadow: 0 25px 20px -20px rgba(8, 29, 45, 0.1);
+}
+
+
+@media(max-width: 1312px) {
+  .card {
+    width: calc(33.333333% - 16px);
+  }
+}
+
+@media(max-width: 1100px) {
+  .card {
+    height: 510px;
+  }
+}
+
+@media(max-width: 900px) {
+  .card {
+    height: 480px;
+    width: calc(33.333333% - 8px);
+  }
+}
+
+@media(max-width: 768px) {
+  .card {
+    height: 420px;
+  }
+}
+
+
+@media(max-width: 700px) {
+  .card {
+    width: calc(50% - 8px);
+    height: 480px;
+  }
+}
+
+@media(max-width: 500px) {
+  .card {
+    width: 100%;
+    height: 446px;
+  }
+}

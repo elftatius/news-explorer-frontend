@@ -1,0 +1,31 @@
+.hero__submit {
+  height: 64px;
+  width: 168px;
+  display: inline-block;
+  background-color: #2F71E5;
+  border: none;
+  border-radius: 100px;
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0px 5px 15px rgba(14, 26, 57, 0.2);
+  outline: none;
+}
+
+.hero__submit:active {
+  background-color: #2A65CC;
+  box-shadow: 0px 5px 15px rgba(14, 26, 57, 0.2);
+}
+
+@media(max-width: 360px) {
+  .hero__submit {
+    height: 56px;
+    width: 100%;
+  }
+}

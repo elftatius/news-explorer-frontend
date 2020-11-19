@@ -1,0 +1,23 @@
+@import url(./_active/header__link_active.css);
+@import url(./_dark/header__link_dark.css);
+
+.header__link {
+  text-decoration: none;
+  margin-right: 32px;
+  display: inline-block;
+  height: 80px;
+  line-height: 80px;
+  box-sizing: border-box;
+  color: #E5E5E5;
+}
+
+.header__link:hover {
+  color: white;
+}
+
+@media(max-width: 700px) {
+  .header__link {
+    line-height: 56px;
+    height: 56px;
+  }
+}

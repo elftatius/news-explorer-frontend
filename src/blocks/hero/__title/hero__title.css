@@ -1,0 +1,21 @@
+.hero__title {
+  margin-top: 0;
+  font-family: "Roboto Slab";
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 64px;
+  letter-spacing: 0px;
+  text-align: left;
+  margin-bottom: 32px;
+
+}
+
+@media(max-width: 768px) {
+  .hero__title {
+    font-size: 36px;
+    line-height: 40px;
+    max-width: 385px;
+    margin-bottom: 16px;
+  }
+}

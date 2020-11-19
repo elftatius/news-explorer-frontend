@@ -1,0 +1,22 @@
+.hero__search {
+  height: 64px;
+  display: flex;
+  border-radius: 100px;
+  background-color: white;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 24px;
+  box-sizing: border-box;
+}
+
+@media(max-width: 360px) {
+  .hero__search {
+    height: 128px;
+    flex-direction: column;
+    position: absolute;
+    bottom: 32px;
+    width: calc(100% - 32px);
+    background-color: transparent;
+    padding-left: 0;
+  }
+}

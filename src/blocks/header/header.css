@@ -1,0 +1,21 @@
+@import url(./__container/header__container.css);
+@import url(./__logo/header__logo.css);
+@import url(./__nav/header__nav.css);
+@import url(./__link/header__link.css);
+@import url(./__button/header__button.css);
+@import url(./_dark/header_dark.css);
+@import url(./__button-icon/header__button-icon.css);
+@import url(./__burger/header__burger.css);
+
+.header {
+  height: 80px;
+  box-shadow: 0 1px rgba(255, 255, 255, 0.2);
+  position: absolute;
+  width: 100%;
+}
+
+@media(max-width: 360px) {
+  .header {
+    z-index: 1;
+  }
+}

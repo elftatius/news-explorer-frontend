@@ -1,0 +1,53 @@
+.author__image {
+  height: 464px;
+  width: 464px;
+  border-radius: 1000px;
+  background-image: url('../../../images/author.jpeg');
+  background-size: cover;
+  background-position: center;
+  margin-right: 56px;
+}
+
+@media(max-width: 1200px) {
+  .author__image {
+    height: 400px;
+    width: 400px;
+    min-width: 400px;
+    min-height: 400px;
+  }
+}
+
+@media(max-width: 1000px) {
+  .author__image {
+    height: 360px;
+    width: 360px;
+    min-width: 360px;
+    min-height: 360px;
+  }
+}
+
+@media(max-width: 900px) {
+  .author__image {
+    height: 300px;
+    width: 300px;
+    min-width: 360px;
+    min-height: 360px;
+  }
+}
+
+@media(max-width: 768px) {
+  .author__image {
+    height: 232px;
+    width: 232px;
+    min-width: 232px;
+    min-height: 232px;
+    margin-right: 30px;
+  }
+}
+
+@media(max-width: 500px) {
+  .author__image {
+    margin-right: 0;
+    margin-bottom: 24px;
+  }
+}

@@ -1,0 +1,11 @@
+.hero__container {
+  max-width: 608px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+@media(max-width: 768px) {
+  .hero__container {
+    max-width: 448px;
+  }
+}

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>News exprorer</title>
+  <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.css %>">
+  <link rel="shortcut icon" href="<%=require('./images/favicon.png').default%>" type="image/x-icon">
+</head>
+<body>
+  <div class="root">
+    <header class="header">
+      <div class="header__container">
+        <div class="header__logo">NewsExplorer</div>
+        <img class="header__burger" src="<%=require('./images/menu-icon-white.svg').default%>" alt="menu icon">
+        <ul class="header__nav">
+          <li>
+            <a class="header__link header__link_active" href="#">Главная</a>
+          </li>
+          <li>
+            <a class="header__link" href="#">Сохраненные статьи</a>
+          </li>
+          <li>
+            <a class="header__button" href="#" data-open-popup="#login-popup">Авторизоваться</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <section class="hero">
+      <div class="hero__container">
+        <h1 class="hero__title">Что творится в мире?</h1>
+        <p class="hero__description">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.</p>
+        <form class="hero__search">
+          <input type="text" class="hero__input" placeholder="Введите тему новости">
+          <input type="submit" class="hero__submit" value="Искать">
+        </form>
+      </div>
+    </section>
+    <!-- <section class="notification">
+      <img class="preloader" src="<%=require('./images/preloader.png').default%>" alt="preloader">
+      <p class="notification__description">Идет поиск новостей...</p>
+    </section> -->
+    <!-- <section class="notification">
+      <img class="notification__icon" src="<%=require('./images/not-found-icon.svg').default%>" alt="not-found-icon">
+      <p class="notification__title">Ничего не найдено</p>
+      <p class="notification__description">К сожалению по вашему запросу ничего не найдено.</p>
+    </section> -->
+    <section class="section">
+      <div class="section__container">
+        <h2 class="section__title">Результаты поиска</h2>
+          <div class="cards">
+            <a class="card" href="#">
+              <div class="card__info">
+                <div class="card__tag">Природа</div>
+                <div class="card__action">
+                  <div class="card__action-tooltip">Войдите, чтобы сохранять статьи</div>
+                  <div class="card__icon">
+                    <img src="<%=require('./images/bookmark-icon.svg').default%>" alt="bookmark card">
+                  </div>
+                </div>
+              </div>
+              <div class="card__image"></div>
+              <div class="card__container">
+                <p class="card__date">2 августа, 2019</p>
+                <p class="card__title">Национальное достояние – парки</p>
+                <p class="card__description">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
+                <p class="card__source">Лента.ру</p>
+              </div>
+            </a>
+            <a class="card" href="#">
+              <div class="card__info">
+                <div class="card__tag">Природа</div>
+                <div class="card__action">
+                  <div class="card__action-tooltip">Войдите, чтобы сохранять статьи</div>
+                  <div class="card__icon">
+                    <img src="<%=require('./images/bookmark-icon.svg').default%>" alt="bookmark card">
+                  </div>
+                </div>
+              </div>
+              <div class="card__image"></div>
+              <div class="card__container">
+                <p class="card__date">2 августа, 2019</p>
+                <p class="card__title">Лесные огоньки: история одной фотографии</p>
+                <p class="card__description">Фотограф отвлеклась от освещения суровой политической реальности Мексики, чтобы запечатлеть ускользающую красоту одного из местных чудес природы.</p>
+                <p class="card__source">Медуза</p>
+              </div>
+            </a>
+            <a class="card" href="#">
+              <div class="card__info">
+                <div class="card__tag">Природа</div>
+                <div class="card__action">
+                  <div class="card__icon card__icon_active">
+                    <img src="<%=require('./images/bookmarked-icon.svg').default%>" alt="bookmark card">
+                  </div>
+                </div>
+              </div>
+              <div class="card__image"></div>
+              <div class="card__container">
+                <p class="card__date">2 августа, 2019</p>
+                <p class="card__title">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</p>
+                <p class="card__description">Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о необходимости их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где...</p>
+                <p class="card__source">Риа</p>
+              </div>
+            </a>
+          </div>
+          <div class="text-center padding-bottom-80">
+            <a class="button" href="#">Показать еще</a>
+          </div>
+      </div>
+    </section>
+     <section class="author">
+      <div class="author__container">
+        <div class="author__image"></div>
+        <div class="author__info">
+          <h2 class="author__title"> Об авторе</h2>
+          <p class="author__description">Меня зовут Татьяна Ткаченко. По основному образованию я психолог. Версткой я заинтересовалась сама и начала самостоятельное обучение. Но мне не хватало систeмного подхода, что и обеспечил мне Яндекс.Практикум. И вот я тут пыхтя, скребя, грызя гранит науки осваиваю азы программирования. Что из этого выйдет? Узнаем дальше. Ну а пока, вот мой дипломный проект.</p>
+          <p class="author__description"></p>
+        </div>
+      </div>
+    </section>
+    <div class="popup" id="login-popup">
+      <div class="popup__content">
+        <img src="<%=require('./images/close.svg').default%>" alt="" class="popup__close" data-close-popup="#login-popup">
+        <h3 class="popup__title">Вход</h3>
+        <form class="popup__form" novalidate name="login">
+          <div class="input-container">
+            <label for="login-email" class="popup__label">Email</label>
+            <input type="email" id ="login-email" name="login-email" class="popup__input" placeholder="Введите почту" required>
+            <span class="error-message" id="login-error-email">Неправильный формат email</span>
+          </div>
+          <div class="input-container">
+            <label for="login-password" class="popup__label">Пароль</label>
+            <input type="password" id="login-password" name="login-password" class="popup__input" placeholder="Введите пароль" required minlength="8">
+            <span class="error-message" id="login-error-password"></span>
+          </div>
+          <div class="text-center">
+            <button disabled type="submit" class="button button_is-fullwidth">Войти</button>
+            <p class="popup__description">или <a class="link" data-close-popup="#login-popup" data-open-popup="#signup-popup" href="#">Зарегистрироваться</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="popup" id="signup-popup">
+      <div class="popup__content">
+        <img src="<%=require('./images/close.svg').default%>" alt="" class="popup__close" data-close-popup="#signup-popup">
+        <h3 class="popup__title">Регистрация</h3>
+        <form class="popup__form" novalidate name="signup">
+          <div class="input-container">
+            <label for="signup-name" class="popup__label">Имя</label>
+            <input type="text" id="signup-name" name="signup-name" class="popup__input" placeholder="Введите имя" required minlength="2" maxlength="30">
+            <span class="error-message" id="signup-error-name"></span>
+          </div>
+          <div class="input-container">
+            <label for="signup-email" class="popup__label">Email</label>
+            <input type="email" id="signup-email" name="signup-email" class="popup__input" placeholder="Введите почту" required>
+            <span class="error-message" id="signup-error-email">Неправильный формат email</span>
+          </div>
+          <div class="input-container">
+            <label for="signup-password" class="popup__label">Пароль</label>
+            <input type="password" id="signup-password" name="signup-password" class="popup__input" placeholder="Введите пароль" required minlength="8">
+            <span class="error-message" id="signup-error-password"></span>
+          </div>
+          <div class="popup__error" id="signup-form-error">
+            Такой пользователь уже есть
+          </div>
+          <div class="text-center">
+            <button type="submit" class="button button_brand button_is-fullwidth">Зарегистрироваться</button>
+            <p class="popup__description">или <a class="link" data-close-popup="#signup-popup" data-open-popup="#login-popup" href="#">Войти</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="footer__container">
+        <div class="footer__site-info">© 2020 Supersite, Powered by News API</div>
+        <div class="footer__navigation">
+          <div class="footer__links">
+            <a href="/" class="footer__link">Главная</a>
+            <a href="https://praktikum.yandex.ru/" target="_blank" class="footer__link">Яндекс.Практикум</a>
+          </div>
+          <div class="footer__socials">
+            <a href="https://www.instagram.com/elftatius/" target="_blank" class="footer__social">
+              <img src="<%=require('./images/instagram-icon.svg').default%>" alt="instagram-icon">
+            </a>
+            <a href="https://github.com/elftatius" target="_blank" class="footer__social">
+              <img src="<%=require('./images/github-icon.svg').default%>" alt="github-icon">
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="<%= htmlWebpackPlugin.files.js %>"></script>
+</body>
+</html>
