@@ -10,6 +10,9 @@
 </head>
 <body>
   <div class="root">
+    <div class="error" id="network-error">
+      Ошибка сети. Попробуйте перезагрузить страницу
+    </div>
     <header class="header">
       <div class="header__container">
         <div class="header__logo">NewsExplorer</div>
@@ -31,83 +34,13 @@
       <div class="hero__container">
         <h1 class="hero__title">Что творится в мире?</h1>
         <p class="hero__description">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.</p>
-        <form class="hero__search">
-          <input type="text" class="hero__input" placeholder="Введите тему новости">
+        <form class="hero__search" id="news-search">
+          <input type="text" name="news-search-query" class="hero__input" placeholder="Введите тему новости" required>
           <input type="submit" class="hero__submit" value="Искать">
         </form>
       </div>
     </section>
-    <!-- <section class="notification">
-      <img class="preloader" src="<%=require('./images/preloader.png').default%>" alt="preloader">
-      <p class="notification__description">Идет поиск новостей...</p>
-    </section> -->
-    <!-- <section class="notification">
-      <img class="notification__icon" src="<%=require('./images/not-found-icon.svg').default%>" alt="not-found-icon">
-      <p class="notification__title">Ничего не найдено</p>
-      <p class="notification__description">К сожалению по вашему запросу ничего не найдено.</p>
-    </section> -->
-    <section class="section">
-      <div class="section__container">
-        <h2 class="section__title">Результаты поиска</h2>
-          <div class="cards">
-            <a class="card" href="#">
-              <div class="card__info">
-                <div class="card__tag">Природа</div>
-                <div class="card__action">
-                  <div class="card__action-tooltip">Войдите, чтобы сохранять статьи</div>
-                  <div class="card__icon">
-                    <img src="<%=require('./images/bookmark-icon.svg').default%>" alt="bookmark card">
-                  </div>
-                </div>
-              </div>
-              <div class="card__image"></div>
-              <div class="card__container">
-                <p class="card__date">2 августа, 2019</p>
-                <p class="card__title">Национальное достояние – парки</p>
-                <p class="card__description">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-                <p class="card__source">Лента.ру</p>
-              </div>
-            </a>
-            <a class="card" href="#">
-              <div class="card__info">
-                <div class="card__tag">Природа</div>
-                <div class="card__action">
-                  <div class="card__action-tooltip">Войдите, чтобы сохранять статьи</div>
-                  <div class="card__icon">
-                    <img src="<%=require('./images/bookmark-icon.svg').default%>" alt="bookmark card">
-                  </div>
-                </div>
-              </div>
-              <div class="card__image"></div>
-              <div class="card__container">
-                <p class="card__date">2 августа, 2019</p>
-                <p class="card__title">Лесные огоньки: история одной фотографии</p>
-                <p class="card__description">Фотограф отвлеклась от освещения суровой политической реальности Мексики, чтобы запечатлеть ускользающую красоту одного из местных чудес природы.</p>
-                <p class="card__source">Медуза</p>
-              </div>
-            </a>
-            <a class="card" href="#">
-              <div class="card__info">
-                <div class="card__tag">Природа</div>
-                <div class="card__action">
-                  <div class="card__icon card__icon_active">
-                    <img src="<%=require('./images/bookmarked-icon.svg').default%>" alt="bookmark card">
-                  </div>
-                </div>
-              </div>
-              <div class="card__image"></div>
-              <div class="card__container">
-                <p class="card__date">2 августа, 2019</p>
-                <p class="card__title">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</p>
-                <p class="card__description">Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о необходимости их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где...</p>
-                <p class="card__source">Риа</p>
-              </div>
-            </a>
-          </div>
-          <div class="text-center padding-bottom-80">
-            <a class="button" href="#">Показать еще</a>
-          </div>
-      </div>
+    <section class="section" id="news-container">
     </section>
      <section class="author">
       <div class="author__container">
@@ -191,6 +124,57 @@
       </div>
     </footer>
   </div>
+
+
+  <template style="display: none;" id="search-preloader">
+    <section class="notification">
+      <img class="preloader" src="<%=require('./images/preloader.png').default%>" alt="preloader">
+      <p class="notification__description">Идет поиск новостей...</p>
+    </section>
+  </template>
+
+  <template style="display: none;" id="cards-container-template">
+    <div class="section__container">
+      <h2 class="section__title">Результаты поиска</h2>
+      <div class="cards"></div>
+    </div>
+  </template>
+
+  <template style="display: none;" id="card-template">
+    <a class="card" href="#">
+      <div class="card__info">
+        <div class="card__tag">Природа</div>
+        <div class="card__action">
+          <div class="card__action-tooltip">Войдите, чтобы сохранять статьи</div>
+          <div class="card__icon">
+            <img src="<%=require('./images/bookmark-icon.svg').default%>" alt="bookmark card">
+          </div>
+        </div>
+      </div>
+      <div class="card__image"></div>
+      <div class="card__container">
+        <p class="card__date">2 августа, 2019</p>
+        <p class="card__title">Национальное достояние – парки</p>
+        <p class="card__description">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
+        <p class="card__source">Лента.ру</p>
+      </div>
+    </a>
+  </template>
+
+  <template style="display: none;" id="show-more-button-template">
+    <div class="text-center padding-bottom-80">
+      <a class="button" id="show-more-news" href="#">Показать еще</a>
+    </div>
+  </template>
+
+  <template style="display: none;" id="no-results-template">
+    <section class="notification">
+      <img class="notification__icon" src="<%=require('./images/not-found-icon.svg').default%>" alt="not-found-icon">
+      <p class="notification__title">Ничего не найдено</p>
+      <p class="notification__description">К сожалению по вашему запросу ничего не найдено.</p>
+    </section>
+  </template>
+
   <script src="<%= htmlWebpackPlugin.files.js %>"></script>
 </body>
 </html>

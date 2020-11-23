@@ -1,20 +1,20 @@
 import '../pages/index.css';
+import './core/modal';
 
-const popupOpenLinks = document.querySelectorAll('[data-open-popup]');
-const popupCloseLinks = document.querySelectorAll('[data-close-popup]');
+import Search from './index/search';
+import NewsApi from './core/news-api';
+import Card from './core/card';
 
-Array.from(popupOpenLinks).forEach((popupOpenLink) => {
-  popupOpenLink.addEventListener('click', (e) => {
-    e.preventDefault();
-    const popup = document.querySelector(popupOpenLink.dataset.openPopup);
-    popup.classList.add('popup_is-opened');
-  });
-});
+const searchForm = document.querySelector('#news-search');
+const newsContainer = document.querySelector('#news-container');
 
-Array.from(popupCloseLinks).forEach((popupCloseLink) => {
-  popupCloseLink.addEventListener('click', (e) => {
-    e.preventDefault();
-    const popup = document.querySelector(popupCloseLink.dataset.closePopup);
-    popup.classList.remove('popup_is-opened');
-  });
-});
+const createCard = (card) => {
+  return new Card(card);
+}
+
+const newsApi = new NewsApi('e9b1151f78274ba3afb1de6d491f6079');
+const search = new Search(newsApi, searchForm, newsContainer, createCard);
+
+newsApi.onNetworkError = () => {
+  document.querySelector('#network-error').classList.add('error_visible');
+};

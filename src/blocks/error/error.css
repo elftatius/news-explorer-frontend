@@ -1,0 +1,14 @@
+@import url(./_visible/error_visible.css);
+
+.error {
+  background-color: #e52f71;
+  color: white;
+  padding: 1rem 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  display: none;
+}
