@@ -18,11 +18,17 @@ export default class Header {
     const element = Header._unauthorizedTemplate.content.cloneNode(true).children[0];
     const container = document.querySelector('.root');
     container.prepend(element);
+    this._element = element;
   }
 
   _renderAuthorized() {
     const element = Header._authorizedTemplate.content.cloneNode(true).children[0];
     const container = document.querySelector('.root');
     container.prepend(element);
+  }
+
+
+  onClick(selector, func) {
+    this._element.querySelector(selector).addEventListener('click', func);
   }
 }
