@@ -91,8 +91,8 @@
             <a class="header__link" href="/my-profile.html">Сохраненные статьи</a>
           </li>
           <li>
-            <a class="header__button" href="#">
-              Грета
+            <a class="header__button" id="logout-button" href="#">
+              <span id="header-user-name"></span>
               <img src="<%=require('./images/logout-icon-white.svg').default%>" alt="logout-icon" class="header__button-icon">
             </a>
           </li>
@@ -104,16 +104,19 @@
   <!-- SIGNIN FORM TEMPLATE -->
   <template style="display: none;" id="signin-form-template">
     <h3 class="popup__title">Вход</h3>
-    <form class="popup__form" novalidate name="login" id="signin-form">
+    <form class="popup__form" novalidate name="login" id="signin-form" action="/signin">
       <div class="input-container">
-        <label for="login-email" class="popup__label">Email</label>
-        <input type="email" id ="login-email" name="login-email" class="popup__input" placeholder="Введите почту" required>
+        <label for="email" class="popup__label">Email</label>
+        <input type="email" id ="login-email" name="email" class="popup__input" placeholder="Введите почту" required>
         <span class="error-message" id="login-error-email"></span>
       </div>
       <div class="input-container">
-        <label for="login-password" class="popup__label">Пароль</label>
-        <input type="password" id="login-password" name="login-password" class="popup__input" placeholder="Введите пароль" required minlength="8" maxlength="32">
+        <label for="password" class="popup__label">Пароль</label>
+        <input type="password" id="login-password" name="password" class="popup__input" placeholder="Введите пароль" required minlength="8" maxlength="32">
         <span class="error-message" id="login-error-password"></span>
+      </div>
+      <div class="popup__error" id="signin-form-error" data-error="401">
+        Email или пароль не верный.
       </div>
       <div class="text-center">
         <button disabled type="submit" class="button button_is-fullwidth">Войти</button>
@@ -125,25 +128,25 @@
   <!-- SIGNUP FORM TEMPLATE -->
   <template style="display: none;" id="signup-form-template">
     <h3 class="popup__title">Регистрация</h3>
-    <form class="popup__form" novalidate name="signup" id="signup-form">
+    <form class="popup__form" novalidate name="signup" id="signup-form" action="/signup">
       <div class="input-container">
-        <label for="signup-name" class="popup__label">Имя</label>
-        <input type="text" id="signup-name" name="signup-name" class="popup__input" placeholder="Введите имя" required minlength="2" maxlength="30">
+        <label for="name" class="popup__label">Имя</label>
+        <input type="text" id="signup-name" name="name" class="popup__input" placeholder="Введите имя" required minlength="2" maxlength="30">
         <span class="error-message" id="signup-error-name"></span>
       </div>
       <div class="input-container">
-        <label for="signup-email" class="popup__label">Email</label>
-        <input type="email" id="signup-email" name="signup-email" class="popup__input" placeholder="Введите почту" required>
+        <label for="email" class="popup__label">Email</label>
+        <input type="email" id="signup-email" name="email" class="popup__input" placeholder="Введите почту" required>
         <span class="error-message" id="signup-error-email"></span>
       </div>
       <div class="input-container">
-        <label for="signup-password" class="popup__label">Пароль</label>
-        <input type="password" id="signup-password" name="signup-password" class="popup__input" placeholder="Введите пароль" required minlength="8" maxlength="32">
+        <label for="password" class="popup__label">Пароль</label>
+        <input type="password" id="signup-password" name="password" class="popup__input" placeholder="Введите пароль" required minlength="8" maxlength="32">
         <span class="error-message" id="signup-error-password"></span>
       </div>
-      <!-- <div class="popup__error" id="signup-form-error">
+      <div class="popup__error" id="signup-form-error" data-error="409">
         Такой пользователь уже есть
-      </div> -->
+      </div>
       <div class="text-center">
         <button type="submit" class="button button_brand button_is-fullwidth">Зарегистрироваться</button>
         <p class="popup__description">или <a class="link" id="open-signin" href="#">Войти</a></p>
@@ -158,6 +161,12 @@
         <img src="<%=require('./images/close.svg').default%>" alt="" class="popup__close">
       </div>
     </div>
+  </template>
+
+<!-- SIGNUP SUCCESS TEMPLATE -->
+  <template style="display: none;" id="signup-success-template">
+    <h3 class="popup__title">Пользователь успешно зарегестрирован!</h3>
+    <a class="link" id="success-to-signin" href="#">Войти</a>
   </template>
 
   <!-- PRELOADER TEMPLATE -->

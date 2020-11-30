@@ -1,19 +1,26 @@
-export default class FormValidator {
-  constructor(form, errorMessages) {
+export default class Form {
+  constructor(form, errorMessages, api) {
     this._form = form;
     this._submitButton = form.querySelector('[type="submit"]');
     this._errorMessages = errorMessages;
+    this._api = api;
     this._addEventListeners();
     this._checkValidity();
+    this._setSubmitState();
   }
 
   _addEventListeners() {
     Array.from(this._form.elements).forEach(input => {
       input.addEventListener('input', () => {
+        Array.from(document.querySelectorAll('[data-error]')).forEach(elem => {
+          elem.classList.remove('popup__error_is-visible');
+        })
+
         this._setSubmitState();
         this._checkInputValidity(input);
       });
     })
+    this._form.querySelector('[type="submit"]').addEventListener('click', this._submit.bind(this));
   }
 
   _checkValidity() {
@@ -48,7 +55,6 @@ export default class FormValidator {
   }
 
   _checkInputValidity(input) {
-    console.log(input.validity);
     const errorMessage = input.nextElementSibling;
     if(input.validity.valueMissing) {
       errorMessage.textContent = this._errorMessages.empty();
@@ -65,5 +71,28 @@ export default class FormValidator {
     else {
       errorMessage.textContent = '';
     }
+  }
+
+  _submit() {
+    const path = this._form.getAttribute('action');
+    let body = {};
+
+    Array.from(this._form.elements).forEach(input => {
+      if(input.type !== 'submit') {
+        body[input.name] = input.value;
+      }
+    })
+
+    this._api.post(path, body)
+      .then((res) => {
+        if(this.onSubmit) {
+          this.onSubmit(res);
+        }
+      })
+      .catch(err => {
+        console.log(err);
+        document.querySelector(`[data-error="${err}"]`).classList.add('popup__error_is-visible');
+      })
+
   }
 }

@@ -21,6 +21,8 @@ export default class Card {
     element.querySelector('.card__description').textContent =  this._cardDescription;
     element.querySelector('.card__source').textContent =  this._cardSource;
 
+    this._configure(element);
+
     return element;
   }
 }

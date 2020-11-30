@@ -16,6 +16,7 @@
   font-size: 18px;
   border: 1px solid #1A1B22;
   cursor: pointer;
+  outline: none;
 }
 
 a.button {
