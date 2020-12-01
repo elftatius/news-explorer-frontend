@@ -8,15 +8,13 @@
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 6;
+  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
-  height: 130px;
+  height: 88px;
 }
 
 @media(max-width: 1312px) {
   .card__description {
-    -webkit-line-clamp: 4;
-    height: 88px;
     margin-top: 0;
   }
 }

@@ -1,9 +1,12 @@
-export default class Popup {
-  static _template = document.querySelector('#popup-template');
+import BaseComponent from './../BaseComponent';
+
+import PopupTemplate from './PopupTemplate.html';
+
+export default class Popup extends BaseComponent {
 
   render() {
     const container = document.querySelector(".root");
-    const element = Popup._template.content.cloneNode(true).children[0];
+    const element = this._renderTemplate(PopupTemplate);
     container.appendChild(element);
     this._element = element;
 
@@ -23,10 +26,6 @@ export default class Popup {
 
   close() {
     this._element.classList.remove('popup_is-opened');
-  }
-
-  onClick(selector, func) {
-    this._element.querySelector(selector).addEventListener('click', func);
   }
 
   _addEventListeners() {

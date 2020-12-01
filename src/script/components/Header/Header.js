@@ -1,10 +1,13 @@
 import Cookies from 'js-cookie';
 
-export default class Header {
-  static _unauthorizedTemplate = document.querySelector('#header-unauthorized-template');
-  static _authorizedTemplate = document.querySelector('#header-authorized-template');
+import BaseComponent from '../BaseComponent';
 
+import unauthorizedTemplate from './UnauthorizedTemplate.html';
+import authorizedTemplate from './AuthorizedTemplate.html';
+
+export default class Header extends BaseComponent {
   constructor(api) {
+    super();
     this._api = api;
   }
 
@@ -24,13 +27,13 @@ export default class Header {
   }
 
   _renderUnauthorized(container) {
-    const element = Header._unauthorizedTemplate.content.cloneNode(true).children[0];
+    const element = this._renderTemplate(unauthorizedTemplate);
     container.prepend(element);
     this._element = element;
   }
 
   _renderAuthorized(container) {
-    const element = Header._authorizedTemplate.content.cloneNode(true).children[0];
+    const element = this._renderTemplate(authorizedTemplate);
     container.prepend(element);
     this._element = element;
     this._api.get('users/me')
@@ -41,13 +44,5 @@ export default class Header {
         Cookies.remove("session");
         location.reload();
       })
-  }
-
-  onClick(selector, func) {
-    const element = this._element.querySelector(selector)
-    if (!element) {
-      return;
-    }
-    element.addEventListener('click', func);
   }
 }

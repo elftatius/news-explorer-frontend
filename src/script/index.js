@@ -8,10 +8,10 @@ import BackendApi from './core/backend-api';
 import Form from './core/form';
 import errorMessages from './core/error-messages';
 
-import Header from './components/Header';
+import Header from './components/Header/Header';
 import SearchCard from './components/Card/SearchCard';
 import SearchAuthorizedCard from './components/Card/SearchAuthorizedCard';
-import Popup from './components/Popup';
+import Popup from './components/Popup/Popup';
 
 const searchForm = document.querySelector('#news-search');
 const newsContainer = document.querySelector('#news-container');
@@ -23,10 +23,10 @@ const backendApi = new BackendApi(Cookies.get('session'));
 
 const createCard = (card) => {
   if(Cookies.get('session')) {
-    return new SearchAuthorizedCard(card);
+    return new SearchAuthorizedCard(card, backendApi);
   }
   else {
-    return new SearchCard(card);
+    return new SearchCard(card, backendApi);
   }
 }
 

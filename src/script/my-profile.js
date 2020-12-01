@@ -2,7 +2,7 @@ import Cookies from 'js-cookie';
 
 import '../pages/my-profile.css';
 
-import Header from './components/Header';
+import Header from './components/Header/Header';
 
 const session = Cookies.get('session');
 

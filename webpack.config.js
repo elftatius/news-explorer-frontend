@@ -50,6 +50,13 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.html$/i,
+        loader: 'html-loader',
+        include: [
+          path.resolve(__dirname, "src/script")
+        ],
+      },
     ],
   },
   plugins: [

@@ -1,7 +1,12 @@
-export default class Card {
-  static _template = document.querySelector('#card-template').content;
+import BaseComponent from './../BaseComponent';
 
-  constructor({ tag, imageUrl, cardDate, cardTitle, cardDescription, cardSource, externalUrl }) {
+import CardTemplate from './Card.html';
+
+export default class Card extends BaseComponent {
+
+  constructor({ tag, imageUrl, cardDate, cardTitle, cardDescription, cardSource, externalUrl }, api) {
+    super();
+    this._api = api;
     this._tag = tag;
     this._imageUrl = imageUrl;
     this._cardDate = cardDate;
@@ -12,11 +17,11 @@ export default class Card {
   }
 
   createElement() {
-    const element = Card._template.cloneNode(true).children[0];
+    const element = this._renderTemplate(CardTemplate);
     element.setAttribute('href', this._externalUrl);
     element.querySelector('.card__tag').textContent = this._tag;
     element.querySelector('.card__image').setAttribute('style', `background-image: url(${this._imageUrl});`);
-    element.querySelector('.card__date').textContent =  this._cardDate;
+    element.querySelector('.card__date').textContent =  this._cardDate.toLocaleDateString();
     element.querySelector('.card__title').textContent =  this._cardTitle;
     element.querySelector('.card__description').textContent =  this._cardDescription;
     element.querySelector('.card__source').textContent =  this._cardSource;

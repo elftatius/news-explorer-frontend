@@ -66,7 +66,7 @@ export default class Search {
       const card = this._createCard({
         tag: q,
         imageUrl: article.urlToImage,
-        cadrDate: article.publishedAt,
+        cardDate: new Date(article.publishedAt),
         cardTitle: article.title,
         cardDescription: article.description,
         cardSource: article.source.name,

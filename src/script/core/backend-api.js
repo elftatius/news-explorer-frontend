@@ -28,7 +28,8 @@ export default class BackendApi {
         method: 'post',
         headers: {
           'Accept': 'application/json',
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${this._token}`
         },
         body: JSON.stringify(body)
     })
