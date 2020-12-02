@@ -4,7 +4,7 @@ export default class NewsApi {
   }
 
   getNews(q, articlesPerPage, page) {
-    return (fetch(`http://newsapi.org/v2/everything?apiKey=${this._token}&pageSize=${articlesPerPage}&page=${page}&q=${q}`)
+    return (fetch(`https://newsapi.org/v2/everything?apiKey=${this._token}&pageSize=${articlesPerPage}&page=${page}&q=${q}`)
       .then((res) => {
         if (!res.ok) {
           return Promise.reject(res.status);
