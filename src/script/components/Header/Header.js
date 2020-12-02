@@ -4,11 +4,13 @@ import BaseComponent from '../BaseComponent';
 
 import unauthorizedTemplate from './UnauthorizedTemplate.html';
 import authorizedTemplate from './AuthorizedTemplate.html';
+import authorizedDarkTemplate from './AuthorizedDark.html';
 
 export default class Header extends BaseComponent {
-  constructor(api) {
+  constructor(api, color = 'light') {
     super();
     this._api = api;
+    this._color = color;
   }
 
   render() {
@@ -33,7 +35,7 @@ export default class Header extends BaseComponent {
   }
 
   _renderAuthorized(container) {
-    const element = this._renderTemplate(authorizedTemplate);
+    const element = this._renderTemplate(this._color === 'dark' ? authorizedDarkTemplate : authorizedTemplate);
     container.prepend(element);
     this._element = element;
     this._api.get('users/me')

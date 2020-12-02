@@ -40,4 +40,22 @@ export default class BackendApi {
         return res.json();
       })
   )}
+
+  delete(path) {
+    return (
+      fetch(`https://elftatius.students.nomoreparties.co/api/${path}`, {
+        method: 'delete',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${this._token}`
+        }
+    })
+      .then((res) => {
+        if (!res.ok) {
+          return Promise.reject(res.status);
+        }
+        return res.json();
+      })
+  )}
 }

@@ -4,7 +4,7 @@ import CardTemplate from './Card.html';
 
 export default class Card extends BaseComponent {
 
-  constructor({ tag, imageUrl, cardDate, cardTitle, cardDescription, cardSource, externalUrl }, api) {
+  constructor({ tag, imageUrl, cardDate, cardTitle, cardDescription, cardSource, externalUrl, id }, api) {
     super();
     this._api = api;
     this._tag = tag;
@@ -14,6 +14,8 @@ export default class Card extends BaseComponent {
     this._cardDescription = cardDescription;
     this._cardSource = cardSource;
     this._externalUrl = externalUrl;
+    this._id = id;
+    this._configure = this._configure.bind(this);
   }
 
   createElement() {
