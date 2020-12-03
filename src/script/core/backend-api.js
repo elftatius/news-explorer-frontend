@@ -1,4 +1,5 @@
 export default class BackendApi {
+  static _endpoint = 'https://api.elftatius.students.nomoreparties.space';
 
   constructor(token) {
     this._token = token;
@@ -6,7 +7,7 @@ export default class BackendApi {
 
   get(path) {
     return (
-      fetch(`https://elftatius.students.nomoreparties.co/api/${path}`, {
+      fetch(`${BackendApi._endpoint}/${path}`, {
         method: 'get',
         headers: {
           'Accept': 'application/json',
@@ -24,7 +25,7 @@ export default class BackendApi {
 
   post(path, body) {
     return (
-      fetch(`https://elftatius.students.nomoreparties.co/api/${path}`, {
+      fetch(`${BackendApi._endpoint}/${path}`, {
         method: 'post',
         headers: {
           'Accept': 'application/json',
@@ -43,7 +44,7 @@ export default class BackendApi {
 
   delete(path) {
     return (
-      fetch(`https://elftatius.students.nomoreparties.co/api/${path}`, {
+      fetch(`${BackendApi._endpoint}/${path}`, {
         method: 'delete',
         headers: {
           'Accept': 'application/json',
