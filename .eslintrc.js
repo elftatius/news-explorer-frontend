@@ -3,6 +3,7 @@ module.exports = {
     browser: true,
     es2021: true,
   },
+  parser: 'babel-eslint',
   extends: [
     'airbnb-base',
   ],
@@ -11,7 +12,7 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-    'no-underscore-dangle': [2, { allow: ['_id'] }],
+    'no-underscore-dangle': [2, { allowAfterThis: true }],
     'import/no-extraneous-dependencies': ['error', { devDependencies: ['postcss.config.js'] }],
   },
 };
